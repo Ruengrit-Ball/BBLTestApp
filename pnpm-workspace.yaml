@@ -1,0 +1,8 @@
+packages:
+  - 'apps/*'
+
+allowBuilds:
+  '@parcel/watcher': false
+  less: false
+  nx: false
+  unrs-resolver: false
