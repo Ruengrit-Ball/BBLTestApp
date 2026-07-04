@@ -43,9 +43,11 @@ export const HomeScreen = () => {
   const renderItem = ({ item }: { item: Product }) => (
     <View style={styles.productContainer}>
       <TouchableOpacity onPress={() => saveFavorite(item)}>
-        {/* {item.image  && <Image
-          source={require(item.image)}
-        />} */}
+        {item.image && <Image
+          source={{ uri: item.image }}
+          style={styles.productImage}
+          resizeMode="contain"
+        />}
         <Text>{item.title}</Text>
         <Text>{item.price}</Text>
       </TouchableOpacity>
@@ -76,6 +78,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     marginBottom: 16,
     gap: 8
+  },
+  productImage: {
+    width: 80,
+    height: 80,
   },
 });
 
